@@ -18,21 +18,23 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav>
+    <header class="header">
+      <div class="container header-nav">
+        <nav class="main-nav">
           <a href="./" class="logo link">
             <span class="logo-web">WEB</span><span class="logo-studio">STUDIO</span>
           </a>
           <ul class="site-nav list">
-            <li><a href="./index.html" class="link current">Studio</a></li>
-            <li><a href="./portfolio.html" class="link">Portfolio</a></li>
-            <li><a href="" class="link">Contacts</a></li>
+            <li class="item"><a href="./index.html" class="link current">Studio</a></li>
+            <li class="item"><a href="./portfolio.html" class="link">Portfolio</a></li>
+            <li class="item"><a href="" class="link">Contacts</a></li>
           </ul>
         </nav>
         <ul class="contacts list">
-          <li><a href="tel:+110001111111" class="link">+11 (000) 111-11-11</a></li>
-          <li><a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a></li>
+          <li class="item"><a href="tel:+110001111111" class="link">+11 (000) 111-11-11</a></li>
+          <li class="item">
+            <a href="mailto:info@devstudio.com" class="link">info@devstudio.com</a>
+          </li>
         </ul>
       </div>
     </header>
@@ -45,30 +47,30 @@
       </section>
       <section class="section strengths">
         <div class="container">
-          <h2 hidden>Our strengths</h2>
-          <ul class="list">
-            <li>
+          <h2 class="visually-hidden">Our strengths</h2>
+          <ul class="list strengths">
+            <li class="item">
               <h3 class="title">Strategy</h3>
               <p>
                 Our goal is to identify the business problem to walk away with the perfect and
                 creative solution.
               </p>
             </li>
-            <li>
+            <li class="item">
               <h3 class="title">Punctuality</h3>
               <p>
                 Bring the key message to the brand's audience for the best price within the shortest
                 possible time.
               </p>
             </li>
-            <li>
+            <li class="item">
               <h3 class="title">Diligence</h3>
               <p>
                 Research and confirm brands that present the strongest digital growth opportunities
                 and minimize risk.
               </p>
             </li>
-            <li>
+            <li class="item">
               <h3 class="title">Technologies</h3>
               <p>
                 Design practice focused on digital experiences. We bring forth a deep passion for
@@ -80,43 +82,87 @@
       </section>
       <section class="section work">
         <div class="container">
-          <h2 class="title">What Are We Doing</h2>
-          <ul class="list">
-            <li>
-              <img src="./images/pc.jpg" alt="website development" width="360" height="300" />
+          <h2 class="section-work-title">What Are We Doing</h2>
+          <ul class="list work">
+            <li class="item">
+              <img
+                class="img"
+                src="./images/pc.jpg"
+                alt="website development"
+                width="360"
+                height="300"
+              />
             </li>
-            <li>
-              <img src="./images/account.jpg" alt="account management" width="360" height="300" />
+            <li class="item">
+              <img
+                class="img"
+                src="./images/account.jpg"
+                alt="account management"
+                width="360"
+                height="300"
+              />
             </li>
-            <li>
-              <img src="./images/app.jpg" alt="apps creation" width="360" height="300" />
+            <li class="item">
+              <img
+                class="img"
+                src="./images/app.jpg"
+                alt="apps creation"
+                width="360"
+                height="300"
+              />
             </li>
           </ul>
         </div>
       </section>
       <section class="section team">
-        <div class="container team">
-          <h2 class="title">Our Team</h2>
-          <ul class="list">
-            <li>
-              <img src="./images/mark.jpg" alt="Mark Guerrero" width="264" height="260" />
-              <h3 class="title">Mark Guerrero</h3>
-              <p>Product Designer</p>
+        <div class="container">
+          <h2 class="section-team-title">Our Team</h2>
+          <ul class="list team">
+            <li class="item">
+              <img
+                class="img"
+                src="./images/mark.jpg"
+                alt="Mark Guerrero"
+                width="264"
+                height="260"
+              />
+              <div class="team-item-text">
+                <h3 class="title">Mark Guerrero</h3>
+                <p>Product Designer</p>
+              </div>
             </li>
-            <li>
-              <img src="./images/tom.jpg" alt="Tom Ford" width="264" height="260" />
-              <h3 class="title">Tom Ford</h3>
-              <p>Frontend Developer</p>
+            <li class="item">
+              <img class="img" src="./images/tom.jpg" alt="Tom Ford" width="264" height="260" />
+              <div class="team-item-text">
+                <h3 class="title">Tom Ford</h3>
+                <p>Frontend Developer</p>
+              </div>
             </li>
-            <li>
-              <img src="./images/camila.jpg" alt="Camila Garcia" width="264" height="260" />
-              <h3 class="title">Camila Garcia</h3>
-              <p>Marketing</p>
+            <li class="item">
+              <img
+                class="img"
+                src="./images/camila.jpg"
+                alt="Camila Garcia"
+                width="264"
+                height="260"
+              />
+              <div class="team-item-text">
+                <h3 class="title">Camila Garcia</h3>
+                <p>Marketing</p>
+              </div>
             </li>
-            <li>
-              <img src="./images/daniel.jpg" alt="Daniel Wilson" width="264" height="260" />
-              <h3 class="title">Daniel Wilson</h3>
-              <p>UI Designer</p>
+            <li class="item">
+              <img
+                class="img"
+                src="./images/daniel.jpg"
+                alt="Daniel Wilson"
+                width="264"
+                height="260"
+              />
+              <div class="team-item-text">
+                <h3 class="title">Daniel Wilson</h3>
+                <p>UI Designer</p>
+              </div>
             </li>
           </ul>
         </div>

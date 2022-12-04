@@ -6,8 +6,13 @@
   --secondary-text-color: #e7e9fc; /*Cornflower*/
   --accent: #4d5ae5; /*iris*/
   --accent-secondary: #404bbf;
+  --gap24: 24px;
+  --gap48: 48px;
+  --shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
 }
-/* General */
+
+/*---------- General ----------*/
 body {
   background-color: var(--main-color);
   color: var(--main-text-color);
@@ -26,18 +31,14 @@ ul {
   margin: 0;
   padding: 0;
 }
+/* or this one
+h1, h2, h3, p {margin-top: 0; margin-bottom: 0;}
+ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
 
-.logo {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.33;
-  letter-spacing: 0.03em;
-}
-
-.hero,
-.footer {
-  background-color: var(--secondary-color);
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .link {
@@ -48,60 +49,160 @@ ul {
   list-style: none;
 }
 
-.logo-web {
-  color: var(--accent);
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-/* Header */
-.container {
-  outline: 2px solid red;
-  width: 1152px;
-  padding: 0 12px;
-  margin: 0 auto;
+.hero,
+.footer {
+  background-color: var(--secondary-color);
+}
+
+.logo {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.03em;
+}
+
+.logo-web {
+  color: var(--accent);
 }
 
 .logo-studio {
   color: var(--secondary-color);
 }
 
-.site-nav a {
+.title {
+  margin-bottom: 8px;
+
+  color: var(--secondary-color);
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.container {
+  width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.site-nav,
+.contacts,
+.header-nav,
+.main-nav,
+.list.strengths,
+.list.work,
+.list.team,
+.selector,
+.gallery-list {
+  display: flex;
+}
+
+/*---------- Header ----------*/
+.header {
+  box-shadow: var(--shadow);
+}
+
+/*.header-nav {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}*/
+
+.header-nav,
+.main-nav {
+  align-items: center;
+}
+
+.site-nav {
+  margin-left: 77px;
+}
+
+.site-nav .item:not(:first-child) {
+  margin-left: 40px;
+}
+
+.contacts {
+  margin-left: auto;
+}
+
+.contacts .item + .item {
+  margin-left: 40px;
+}
+
+.site-nav .link {
+  display: block;
+  padding-top: var(--gap24);
+  padding-bottom: var(--gap24);
+
   color: var(--secondary-color);
   font-weight: 500;
 }
 
 .contacts .link,
-.site-nav .link:hover,
-.site-nav .link:focus {
+.main-nav .site-nav .link:hover,
+.main-nav .site-nav .link:focus {
   color: var(--main-text-color);
 }
 
-.link.current,
+.site-nav .link.current,
 .site-nav .link:active,
 .contacts .link:hover,
 .contacts .link:focus {
   color: var(--accent);
 }
 
-/* Footer */
+/*---------- Footer ----------*/
+.footer .container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 .footer .logo-studio {
   color: var(--third-color);
 }
 
 .footer-text {
+  margin-top: 16px;
+  width: 264px;
+
   color: var(--secondary-text-color);
 }
 
-/*Index.html*/
+/*---------- Index.html ----------*/
+.hero .container {
+  padding-top: 192px;
+  padding-bottom: 192px;
+}
+
 .hero .title {
+  text-align: center;
+  width: 492px;
+  margin: 0 auto var(--gap48);
+
   color: var(--main-color);
   font-size: 56px;
   line-height: 1.07;
-  text-align: center;
-  margin-bottom: 48px;
 }
 
 .hero-button {
-  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  padding: 16px 32px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
   background-color: var(--accent);
   color: var(--main-color);
   font-family: inherit;
@@ -109,13 +210,8 @@ ul {
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.04em;
-  border-radius: 4px;
-  padding: 16px 32px;
-  min-height: 51px;
-  min-width: 170px;
-  border: 1px solid transparent;
-  margin: 0 auto;
-  display: block;
+
+  cursor: pointer;
 }
 
 .hero-button:hover,
@@ -128,35 +224,60 @@ ul {
   background-color: var(--accent-secondary);
 }
 
-.hero,
-.strengths,
-.work {
-  margin-bottom: 120px;
-}
-.title {
-  color: var(--secondary-color);
-  font-size: 20px;
-  line-height: 1.2;
+.section.strengths,
+.section.team {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
-.container h3 {
-  margin-bottom: 8px;
+.section.work {
+  padding-bottom: 120px;
 }
 
-.work .title,
-.team h2 {
-  font-size: 36px;
-  line-height: 1.11;
+.list.strengths .item + .item,
+.list.work .item + .item,
+.list.team .item + .item {
+  margin-left: var(--gap24);
+}
+
+.list.strengths .item {
+  width: 264px;
+}
+
+.team-item-text {
   text-align: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .section.team {
   background-color: var(--third-color);
 }
 
-/*Portfolio*/
+.section-work-title,
+.section-team-title {
+  text-align: center;
+  margin-bottom: 72px;
+
+  color: var(--secondary-color);
+  font-size: 36px;
+  line-height: 1.11;
+}
+
+/*---------- Portfolio ----------*/
+.selector {
+  justify-content: center;
+}
+
+.selector .item + .item {
+  margin-left: var(--gap24);
+}
+
 .selector-button {
-  cursor: pointer;
+  padding: 12px 24px;
+  border: 1px solid var(--secondary-text-color);
+  border-radius: 4px;
+
   background-color: var(--third-color);
   color: var(--accent);
   font-family: inherit;
@@ -164,42 +285,47 @@ ul {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
+
+  cursor: pointer;
 }
 
 .selector-button:hover,
-.selector-button:focus {
+.selector-button:focus,
+.selector-button:active {
   background-color: var(--accent);
   color: var(--main-color);
+  border: 1px solid transparent;
+}
+
+.filter {
+  padding-top: 96px;
+  padding-bottom: 72px;
+}
+
+.gallery-list {
+  padding-bottom: 120px;
+  flex-wrap: wrap;
+  row-gap: var(--gap48);
+  column-gap: var(--gap24);
+  /*margin-left: calc(-1 * var(--gap24));
+  margin-top: calc(-1 * var(--gap48));*/
+}
+
+.gallery-list .item {
+  flex-basis: calc((100% - 2 * var(--gap24)) / 3);
+  /*margin-left: var(--gap24);
+  margin-top: var(--gap48);*/
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  overflow: hidden;
+}
+
+.gallery-item-text {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  padding-left: 16px;
+  border: 0.5px solid var(--third-color);
 }
 
 .link p {
   color: var(--main-text-color);
 }
-
-/*для img поставте display: block;*/
-/*Друзі, є така хороша властивість gap, Репета про неї не 
-згадував і вона лише згадується в одному рядку в конспекті, але ця штука полегшить вам 
-життя в рази.*/
-/*Доречі, а як ви центрували кнопку в герої?
-Я кнопку сделал display: block и задал margin-left margin-right auto*/
-/*напишіть замість flex-basis
-width: calc((100% - 2*30px) / 3);
-саме так скопіюйте з усіма пробілами і пікселями. 
-Бо якщо з таким написом як у Вас, то вираховує чомусь ширину лішки 390px  а не 370*/
-/*outline: 2px solid tomato*/
-
-/*html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}*/
-
-/* body {margin: 0}*/
-/* margin: 0 auto} - centrirovat*/
-
-/*1128
-падинг 12*/
