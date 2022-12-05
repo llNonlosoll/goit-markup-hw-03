@@ -10,6 +10,9 @@
   --gap48: 48px;
   --shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 1px 6px rgba(46, 47, 66, 0.08);
+  --shadow-secondary: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
+  --shadow-third: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 /*---------- General ----------*/
@@ -98,6 +101,11 @@ ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
   margin: 0 auto;
 }
 
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 .site-nav,
 .contacts,
 .header-nav,
@@ -164,7 +172,7 @@ ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
 }
 
 /*---------- Footer ----------*/
-.footer .container {
+.footer {
   padding-top: 100px;
   padding-bottom: 100px;
 }
@@ -181,7 +189,7 @@ ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
 }
 
 /*---------- Index.html ----------*/
-.hero .container {
+.hero {
   padding-top: 192px;
   padding-bottom: 192px;
 }
@@ -231,7 +239,7 @@ ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
 }
 
 .section.work {
-  padding-bottom: 120px;
+  padding-top: 0;
 }
 
 .list.strengths .item + .item,
@@ -254,6 +262,12 @@ ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
   background-color: var(--third-color);
 }
 
+.list.team .item {
+  background-color: var(--main-color);
+  box-shadow: var(--shadow-secondary);
+  border-radius: 0px 0px 4px 4px;
+}
+
 .section-work-title,
 .section-team-title {
   text-align: center;
@@ -265,6 +279,10 @@ ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
 }
 
 /*---------- Portfolio ----------*/
+.section.portfolio {
+  padding-top: 96px;
+}
+
 .selector {
   justify-content: center;
 }
@@ -297,13 +315,11 @@ ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
   border: 1px solid transparent;
 }
 
-.filter {
-  padding-top: 96px;
-  padding-bottom: 72px;
+.list.selector {
+  margin-bottom: 72px;
 }
 
 .gallery-list {
-  padding-bottom: 120px;
   flex-wrap: wrap;
   row-gap: var(--gap48);
   column-gap: var(--gap24);
@@ -315,7 +331,7 @@ ul {margin-top: 0; margin-bottom: 0; padding-left: 0;} */
   flex-basis: calc((100% - 2 * var(--gap24)) / 3);
   /*margin-left: var(--gap24);
   margin-top: var(--gap48);*/
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  box-shadow: var(--shadow-third);
   overflow: hidden;
 }
 
